@@ -19,10 +19,12 @@ body {
 
 .headpart {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .title {
-    flex: 1;
+    flex: 1 1 200px;
     font-size: 35px;
     color: black;
     text-shadow: 7px 5px 3px rgb(128, 160, 128);
@@ -44,8 +46,9 @@ body {
 }
 
 .buttonroom {
-    flex: 2;
+    flex: 2 1 400px;
     position: relative;
+    min-height: 40px;
 }
 
 .buttoncontainer {
