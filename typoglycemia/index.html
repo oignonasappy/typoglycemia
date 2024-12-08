@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--残り ラジオボタン(buttonでの)実装-->
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タイポグリセミア ジェネレータ</title>
+    <meta name="description" content="タイポグリセミア（Typoglycemia）とは、単語の最初と最後の文字以外の順番が入れ替っわても正しく読めしてまう現象である。">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="background-overlay"></div>
+
+    <div class="headpart">
+        <h1 class="title">
+            <a href="https://www.google.com/search?q=タイポグリセミア" target="_blank" rel="noopener noreferrer" title="ってなに">
+                <span class="titleText">Typo</span><br>
+                <span class="titleText">glycemia</span>
+            </a>
+        </h1>
+    
+        <div class="buttonroom">
+            <div class="buttoncontainer">
+                <div class="buttondesc">シャッフルの強度 :</div>
+                <button id="soft" type="button" onclick="clickSoft()">SOFT</button>
+                <button id="hard" type="button" onclick="clickHard()">HARD</button>
+            </div>
+        </div>
+    </div>
+    
+    <label for="in">ここに入力</label>
+    <textarea id="in" class="inputArea" rows="2" placeholder="ここに ぶんょしうを にりゅうょく&#13;くぎもりじを まえじて"></textarea>
+    <label for="out">ここが出力</label>
+    <textarea id="out" class="outputArea" readonly></textarea>
+    <p style="display: block; text-align: right; margin-top: 0; margin-right: 3%;"><button onclick="clipboardCopy()" >Copy</button></p>
+
+    <article class="delimitter">
+        <p>区切り文字として、</p>
+        <dl class="dlmList">
+            <dt>(半<span style="color: gray;">角</span>)空白</dt>
+            <dd>" "</dd>
+            <dt>(全<span style="color: gray;">角</span>)空白</dt>
+            <dd>"　"</dd>
+            <dt>(半)コンマ</dt>
+            <dd>","</dd>
+            <dt>(半)ピリオド</dt>
+            <dd>"."</dd>
+            <dt>(全)句読点</dt>
+            <dd>"、"</dd>
+            <dt>(全)句点</dt>
+            <dd>"。"</dd>
+            <dt>改行</dt>
+            <dd style="color: rgb(160, 160, 160);">\n</dd>
+        </dl>
+        <p>が利用できます</p>
+        <p>また、区切り文字として</p>
+        <dl class="dlmList">
+            <dt>(半)アンダーバー</dt>
+            <dd>"_"</dd>
+        </dl>
+        <p>を使用すると、消去されて出力されます(前後の文字がつながります)</p>
+    </article>
+
+    <article class="desc">
+        <h2>タイポグリセミアとは？</h2>
+        <p>ぶんょしうの たごんの さしいょと さごいの もいじがいを ばららばに いかれてえも にげんんは なぜか よめまてしう げしんょうの こと。</p>
+        <p>たえとば、</p>
+        <blockquote>
+            「こまのえ、としょんかに いてっきんたです。」<br>
+            「おえまが さにきかばって いっんたじなゃいか！」<br>
+            "I cna't belveie he won the cyiclng cpmoetoitin!"<br>
+        </blockquote>
+        <p>なだんか、きおがかしく なてっきすよまね。</p>
+    </article>
+
+    <script src="./src/script.js"></script>
+</body>
+
+</html>
